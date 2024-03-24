@@ -25,9 +25,18 @@ Route::get('/', function () {
     ]);
 });
 
+
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cahaya', function () { return inertia('Data/Cahaya'); })->name('cahaya');
+    Route::get('/kelembaban', function () { return inertia('Data/Kelembaban'); })->name('kelembaban');
+    Route::get('/suhu', function () { return inertia('Data/Suhu'); })->name('suhu');
+    Route::get('/tanah', function () { return inertia('Data/Tanah'); })->name('tanah');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
