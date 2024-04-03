@@ -34,8 +34,8 @@ export default function Authenticated({ user, header, children }) {
                             </NavLink>
 
                             <NavLink
-                                href={route("profile.edit")}
-                                active={route().current("profile.edit")}
+                                href={route("editprofile")}
+                                active={route().current("editprofile")}
                             >
                                 Profile
                             </NavLink>

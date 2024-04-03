@@ -36,9 +36,7 @@ return Inertia::render('Dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/tabledata', function () { return inertia('Data/TableData'); })->name('tabledata');
-    Route::get('/kelembaban', function () { return inertia('Data/Kelembaban'); })->name('kelembaban');
-    Route::get('/suhu', function () { return inertia('Data/Suhu'); })->name('suhu');
-    Route::get('/tanah', function () { return inertia('Data/Tanah'); })->name('tanah');
+    Route::get('/editprofile', function () { return inertia('ProfileLora/EditProfile'); })->name('editprofile');
 });
 
 
